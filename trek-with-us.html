@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trek With Us - Deccaneventsphere Club</title>
+    <meta name="description" content="Join Deccaneventsphere Club for unforgettable trekking adventures across Maharashtra. Explore mountains, valleys, and scenic trails with experienced guides and fellow adventure enthusiasts.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'orange': {
+                            400: '#fb923c',
+                            500: '#f97316',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+    
+    <style>
+        /* Custom animations */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slide-in-left {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slide-in-right {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse-orange {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 1s ease-out;
+        }
+
+        .animate-slide-in-left {
+            animation: slide-in-left 0.8s ease-out;
+        }
+
+        .animate-slide-in-right {
+            animation: slide-in-right 0.8s ease-out;
+        }
+
+        .animate-pulse-orange {
+            animation: pulse-orange 2s ease-in-out infinite;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #f97316;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ea580c;
+        }
+
+        /* Selection colors */
+        ::selection {
+            background-color: #f97316;
+            color: #000;
+        }
+
+        /* Focus styles */
+        button:focus,
+        a:focus {
+            outline: 2px solid #f97316;
+            outline-offset: 2px;
+        }
+
+        /* Image loading placeholder */
+        img {
+            background-color: rgba(55, 65, 81, 0.3);
+            transition: opacity 0.3s ease;
+        }
+
+        /* Header scroll effect */
+        .header-scrolled {
+            background-color: rgba(0, 0, 0, 0.95) !important;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* WhatsApp Community Button Pulse */
+        @keyframes community-pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(249, 115, 22, 0);
+            }
+        }
+
+        .community-btn-pulse {
+            animation: community-pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo and Brand -->
+                <a href="index.html" class="flex flex-col">
+                    <img 
+                        src="src/Colour Logo PNG.png" 
+                        alt="Deccan Eventsphere - Where Every Event Peaks" 
+                        class="h-12 sm:h-14 w-auto object-contain bg-transparent hero-logo"
+                    />
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 font-medium">Home</a>
+                    <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 font-medium">About</a>
+                    <a href="events.html" class="text-white hover:text-orange-400 transition-colors duration-200 font-medium">Events</a>
+                    <a href="trek-with-us.html" class="text-orange-400 hover:text-orange-300 transition-colors duration-200 font-medium">Trekking</a>
+                    <a href="charity.html" class="text-white hover:text-orange-400 transition-colors duration-200 font-medium">Charity</a>
+                    <a href="race-results.html" class="text-white hover:text-orange-400 transition-colors duration-200 font-medium">Race Results</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:text-orange-400 transition-colors duration-200" aria-label="Toggle mobile menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden bg-black/95 backdrop-blur-md rounded-lg mt-2 py-4 shadow-xl hidden">
+                <a href="index.html" class="block px-6 py-3 text-white hover:text-orange-400 hover:bg-orange-400/10 transition-all duration-200">Home</a>
+                <a href="about.html" class="block px-6 py-3 text-white hover:text-orange-400 hover:bg-orange-400/10 transition-all duration-200">About</a>
+                <a href="events.html" class="block px-6 py-3 text-white hover:text-orange-400 hover:bg-orange-400/10 transition-all duration-200">Events</a>
+                <a href="trek-with-us.html" class="block px-6 py-3 text-orange-400 bg-orange-400/10">Trekking</a>
+                <a href="charity.html" class="block px-6 py-3 text-white hover:text-orange-400 hover:bg-orange-400/10 transition-all duration-200">Charity</a>
+                <a href="race-results.html" class="block px-6 py-3 text-white hover:text-orange-400 hover:bg-orange-400/10 transition-all duration-200">Race Results</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85');">
+                <div class="absolute inset-0 bg-black/60"></div>
+            </div>
+            
+            <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+                <div class="animate-fade-in">
+                    <h1 class="text-5xl sm:text-7xl lg:text-8xl font-bold mb-4 tracking-wide">
+                        Trek <span class="text-orange-400">With Us</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl lg:text-3xl text-orange-300 font-medium mb-8">
+                        Adventure Awaits. Conquer Peaks Together.
+                    </p>
+                    <p class="text-lg sm:text-xl text-gray-200 mb-12 leading-relaxed max-w-2xl mx-auto">
+                        Experience the thrill of trekking through Maharashtra's most scenic trails with expert guides and a passionate community of adventurers.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="#upcoming-treks" class="inline-flex items-center bg-orange-500 hover:bg-orange-400 text-black font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-orange-500/25">
+                            Explore Treks
+                            <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        </a>
+                        <a href="https://chat.whatsapp.com/YOUR_COMMUNITY_INVITE_LINK" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-green-500 hover:bg-green-400 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-green-500/25 community-btn-pulse">
+                            <i data-lucide="users" class="mr-2 w-5 h-5"></i>
+                            Join Our Community
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px bg-orange-500"></div>
+
+        <!-- Upcoming Treks Section -->
+        <section id="upcoming-treks" class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center justify-center space-x-3 mb-4">
+                        <i data-lucide="mountain" class="text-orange-400 w-10 h-10"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">
+                            Upcoming Treks
+                        </h2>
+                    </div>
+                    <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                        Join us on breathtaking adventures and discover Maharashtra's hidden gems
+                    </p>
+                </div>
+
+                <!-- Treks Grid -->
+                <div class="space-y-8">
+                    
+                    <!-- Trek 1: Rajmachi Fort Trek -->
+                    <div class="group relative bg-gradient-to-br from-black to-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-orange-400 transition-all duration-500 shadow-2xl hover:shadow-orange-400/20">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-orange-400/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+                        
+                        <div class="relative grid lg:grid-cols-2 gap-0">
+                            <!-- Content Side -->
+                            <div class="p-8 lg:p-12 flex flex-col justify-center space-y-6">
+                                <div class="inline-flex items-center space-x-2 bg-orange-400/10 border border-orange-400/30 rounded-full px-4 py-2 w-fit">
+                                    <i data-lucide="trending-up" class="w-4 h-4 text-orange-400"></i>
+                                    <span class="text-sm font-semibold text-orange-400">Popular Trek</span>
+                                </div>
+                                
+                                <h3 class="text-3xl lg:text-4xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300">
+                                    Rajmachi Fort Trek
+                                </h3>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="map-pin" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">Lonavala, Maharashtra</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="clock" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">2 Days / 1 Night</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="activity" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">Difficulty: Moderate</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="indian-rupee" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">₹1,499 per person</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-gray-400 leading-relaxed text-lg">
+                                    Experience historic forts, lush green valleys, and stunning monsoon views on this classic Maharashtra trek perfect for beginners.
+                                </p>
+                                
+                                <a href="https://wa.me/917338224842?text=I'm%20interested%20in%20Rajmachi%20Fort%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-black font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-orange-400/50 w-fit">
+                                    Join Trek
+                                    <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                                </a>
+                            </div>
+                            
+                            <!-- Image Side -->
+                            <div class="relative h-[400px] lg:h-auto">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwzfHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                                    alt="Rajmachi Fort Trek scenic mountain view" 
+                                    width="800"
+                                    height="600"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-gray-900/80 lg:via-transparent lg:to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="flex items-center justify-center py-4">
+                        <div class="h-px w-32 bg-gradient-to-r from-transparent via-orange-400/50 to-transparent"></div>
+                    </div>
+
+                    <!-- Trek 2: Harishchandragad Trek -->
+                    <div class="group relative bg-gradient-to-br from-black to-gray-900 rounded-3xl overflow-hidden border border-gray-700 hover:border-orange-400 transition-all duration-500 shadow-2xl hover:shadow-orange-400/20">
+                        <div class="absolute top-0 left-0 w-64 h-64 bg-orange-400/10 rounded-full blur-3xl -ml-32 -mt-32"></div>
+                        
+                        <div class="relative grid lg:grid-cols-2 gap-0">
+                            <!-- Image Side -->
+                            <div class="relative h-[400px] lg:h-auto order-2 lg:order-1">
+                                <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw1fHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                                    alt="Harishchandragad Trek mountain peaks" 
+                                    width="800"
+                                    height="600"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent lg:bg-gradient-to-l lg:from-gray-900/80 lg:via-transparent lg:to-transparent"></div>
+                            </div>
+                            
+                            <!-- Content Side -->
+                            <div class="p-8 lg:p-12 flex flex-col justify-center space-y-6 order-1 lg:order-2">
+                                <div class="inline-flex items-center space-x-2 bg-orange-400/10 border border-orange-400/30 rounded-full px-4 py-2 w-fit">
+                                    <i data-lucide="star" class="w-4 h-4 text-orange-400"></i>
+                                    <span class="text-sm font-semibold text-orange-400">Challenging Trek</span>
+                                </div>
+                                
+                                <h3 class="text-3xl lg:text-4xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300">
+                                    Harishchandragad Trek
+                                </h3>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="map-pin" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">Ahmednagar, Maharashtra</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="clock" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">2 Days / 1 Night</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="activity" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">Difficulty: Difficult</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="indian-rupee" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">₹1,899 per person</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-gray-400 leading-relaxed text-lg">
+                                    Witness the magnificent Konkan Kada cliff and explore ancient caves on this challenging trek for experienced adventurers.
+                                </p>
+                                
+                                <a href="https://wa.me/917338224842?text=I'm%20interested%20in%20Harishchandragad%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-black font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-orange-400/50 w-fit">
+                                    Join Trek
+                                    <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="flex items-center justify-center py-4">
+                        <div class="h-px w-32 bg-gradient-to-r from-transparent via-orange-400/50 to-transparent"></div>
+                    </div>
+
+                    <!-- Trek 3: Kalsubai Peak Trek -->
+                    <div class="group relative bg-gradient-to-br from-black to-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-orange-400 transition-all duration-500 shadow-2xl hover:shadow-orange-400/20">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-orange-400/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+                        
+                        <div class="relative grid lg:grid-cols-2 gap-0">
+                            <!-- Content Side -->
+                            <div class="p-8 lg:p-12 flex flex-col justify-center space-y-6">
+                                <div class="inline-flex items-center space-x-2 bg-orange-400/10 border border-orange-400/30 rounded-full px-4 py-2 w-fit">
+                                    <i data-lucide="mountain-snow" class="w-4 h-4 text-orange-400"></i>
+                                    <span class="text-sm font-semibold text-orange-400">Highest Peak</span>
+                                </div>
+                                
+                                <h3 class="text-3xl lg:text-4xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300">
+                                    Kalsubai Peak Trek
+                                </h3>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="map-pin" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">Ahmednagar, Maharashtra</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="clock" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">1 Day</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="activity" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">Difficulty: Moderate to Difficult</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
+                                            <i data-lucide="indian-rupee" class="w-5 h-5 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-lg">₹1,299 per person</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-gray-400 leading-relaxed text-lg">
+                                    Conquer Maharashtra's highest peak at 1,646 meters and experience panoramic views of the Sahyadri ranges from the summit.
+                                </p>
+                                
+                                <a href="https://wa.me/917338224842?text=I'm%20interested%20in%20Kalsubai%20Peak%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-black font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-orange-400/50 w-fit">
+                                    Join Trek
+                                    <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                                </a>
+                            </div>
+                            
+                            <!-- Image Side -->
+                            <div class="relative h-[400px] lg:h-auto">
+                                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw2fHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                                    alt="Kalsubai Peak Trek summit view" 
+                                    width="800"
+                                    height="600"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-gray-900/80 lg:via-transparent lg:to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px bg-orange-500 mx-4 sm:mx-6 lg:mx-8"></div>
+
+        <!-- Why Trek With Us Section -->
+        <section class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center justify-center space-x-3 mb-4">
+                        <i data-lucide="shield-check" class="text-orange-400 w-10 h-10"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">
+                            Why Trek With Us
+                        </h2>
+                    </div>
+                    <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                        Experience safe, guided, and memorable trekking adventures with our expert team
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature 1: Safety First -->
+                    <div class="bg-gradient-to-br from-black to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-400/20">
+                        <div class="w-16 h-16 bg-orange-400/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="shield" class="text-orange-400 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Safety First</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Comprehensive safety measures, first-aid kits, and trained rescue support ensure your well-being throughout the journey.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2: Experienced Guides -->
+                    <div class="bg-gradient-to-br from-black to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-400/20">
+                        <div class="w-16 h-16 bg-orange-400/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="compass" class="text-orange-400 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Experienced Guides</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Trek with certified guides who know every trail, sharing local insights and ensuring a smooth adventure from start to finish.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3: Affordable Pricing -->
+                    <div class="bg-gradient-to-br from-black to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-400/20">
+                        <div class="w-16 h-16 bg-orange-400/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="wallet" class="text-orange-400 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Affordable Pricing</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Quality trekking experiences at competitive prices, with transparent costs and no hidden charges for budget-conscious adventurers.
+                        </p>
+                    </div>
+
+                    <!-- Feature 4: Community Experience -->
+                    <div class="bg-gradient-to-br from-black to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-400/20">
+                        <div class="w-16 h-16 bg-orange-400/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="users" class="text-orange-400 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Community Experience</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Join a vibrant community of trekkers, make lifelong friends, and share unforgettable moments on every expedition.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px bg-orange-500 mx-4 sm:mx-6 lg:mx-8"></div>
+
+        <!-- Trek Categories Section -->
+        <section class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center justify-center space-x-3 mb-4">
+                        <i data-lucide="layout-grid" class="text-orange-400 w-10 h-10"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">
+                            Trek Categories
+                        </h2>
+                    </div>
+                    <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                        Choose from our diverse range of trekking experiences tailored to every skill level
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Category 1: Weekend Treks -->
+                    <div class="relative group overflow-hidden rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-500 h-80">
+                        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                            alt="Weekend trek adventure" 
+                            width="600"
+                            height="400"
+                            loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <i data-lucide="calendar-days" class="text-orange-400 w-5 h-5"></i>
+                                <span class="text-orange-400 font-semibold">Weekend Getaways</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Weekend Treks</h3>
+                            <p class="text-gray-300 mb-4">Perfect 1-2 day escapes for busy professionals seeking quick adventure and rejuvenation.</p>
+                            <a href="#weekend-treks" class="inline-flex items-center text-orange-400 font-semibold hover:text-orange-300 transition-colors duration-200">
+                                Explore Weekend Treks
+                                <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Mountain Treks -->
+                    <div class="relative group overflow-hidden rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-500 h-80">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwzfHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                            alt="Mountain peak trekking" 
+                            width="600"
+                            height="400"
+                            loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <i data-lucide="mountain-snow" class="text-orange-400 w-5 h-5"></i>
+                                <span class="text-orange-400 font-semibold">Summit Expeditions</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Mountain Treks</h3>
+                            <p class="text-gray-300 mb-4">Challenging high-altitude expeditions for experienced trekkers seeking the ultimate adventure.</p>
+                            <a href="#mountain-treks" class="inline-flex items-center text-orange-400 font-semibold hover:text-orange-300 transition-colors duration-200">
+                                Explore Mountain Treks
+                                <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Beginner Treks -->
+                    <div class="relative group overflow-hidden rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-500 h-80">
+                        <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw1fHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                            alt="Beginner-friendly trekking trails" 
+                            width="600"
+                            height="400"
+                            loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <i data-lucide="smile" class="text-orange-400 w-5 h-5"></i>
+                                <span class="text-orange-400 font-semibold">Easy Trails</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Beginner Treks</h3>
+                            <p class="text-gray-300 mb-4">Gentle trails perfect for first-time trekkers and families looking to start their adventure journey.</p>
+                            <a href="#beginner-treks" class="inline-flex items-center text-orange-400 font-semibold hover:text-orange-300 transition-colors duration-200">
+                                Explore Beginner Treks
+                                <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Corporate/Group Treks -->
+                    <div class="relative group overflow-hidden rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-500 h-80">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw2fHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                            alt="Group trekking and team activities" 
+                            width="600"
+                            height="400"
+                            loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <i data-lucide="briefcase" class="text-orange-400 w-5 h-5"></i>
+                                <span class="text-orange-400 font-semibold">Team Building</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Corporate & Group Treks</h3>
+                            <p class="text-gray-300 mb-4">Customized team-building adventures for corporate groups and organizations of all sizes.</p>
+                            <a href="#corporate-treks" class="inline-flex items-center text-orange-400 font-semibold hover:text-orange-300 transition-colors duration-200">
+                                Explore Corporate Treks
+                                <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category 5: Long Duration Treks -->
+                    <div class="relative group overflow-hidden rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-500 h-80">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw2fHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                            alt="Group trekking and team activities" 
+                            width="600"
+                            height="400"
+                            loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <i data-lucide="calendar-days" class="text-orange-400 w-5 h-5"></i>
+                                <span class="text-orange-400 font-semibold">Multi-Day Camping</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Long Duration Treks</h3>
+                            <p class="text-gray-300 mb-4">Extended expeditions for serious adventurers seeking deep wilderness immersion.</p>
+                            <a href="#long-duration-treks" class="inline-flex items-center text-orange-400 font-semibold hover:text-orange-300 transition-colors duration-200">
+                                Explore Long Duration Treks
+                                <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category 6: Custom / Private Treks Section -->
+                    <div class="relative group overflow-hidden rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-500 h-80">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw2fHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                            alt="Group trekking and team activities" 
+                            width="600"
+                            height="400"
+                            loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <i data-lucide="star" class="text-orange-400 w-5 h-5"></i>
+                                <span class="text-orange-400 font-semibold">Design Your Own Trek</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Custome & Private Treks</h3>
+                            <p class="text-gray-300 mb-4">Create a personalized trekking experience tailored to your group's preferences, fitness level, schedule, and interests.</p>
+                            <a href="#custom-treks" class="inline-flex items-center text-orange-400 font-semibold hover:text-orange-300 transition-colors duration-200">
+                                Explore Custom & Private Treks
+                                <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px bg-orange-500 mx-4 sm:mx-6 lg:mx-8"></div>
+
+        <!-- Beginner Treks Section -->
+        <section id="beginner-treks" class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center space-x-3 mb-4">
+                        <i data-lucide="smile" class="text-orange-400 w-8 h-8"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">Beginner Treks</h2>
+                    </div>
+                    <p class="text-gray-400 text-lg">Perfect trails for first-time trekkers and families</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Trek Card 1 -->
+                    <article class="bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 overflow-hidden">
+                        <div class="grid lg:grid-cols-3 gap-0">
+                            <div class="relative h-64 lg:h-auto">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwzfHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                                    alt="Sinhagad Fort Trek" 
+                                    width="600"
+                                    height="400"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="lg:col-span-2 p-8">
+                                <div class="flex flex-wrap items-center gap-3 mb-4">
+                                    <span class="bg-orange-400/10 border border-orange-400/30 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">Beginner</span>
+                                    <span class="text-gray-400 text-sm">1 Day</span>
+                                    <span class="text-gray-400 text-sm">•</span>
+                                    <span class="text-gray-400 text-sm">Easy</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-3">Sinhagad Fort Trek</h3>
+                                <p class="text-gray-300 mb-4 leading-relaxed">Historic fort trek near Pune with paved pathways and minimal elevation gain. Perfect for beginners and families with children.</p>
+                                <div class="grid sm:grid-cols-2 gap-3 mb-4">
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Pune, Maharashtra</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="trending-up" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Altitude: 1,312 m</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="sun" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Best: Oct - Feb</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="indian-rupee" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">₹799 per person</span>
+                                    </div>
+                                </div>
+                                <details class="group/details">
+                                    <summary class="cursor-pointer list-none flex items-center justify-between text-orange-400 font-semibold hover:text-orange-300 transition-colors duration-200">
+                                        <span class="flex items-center">
+                                            <i data-lucide="info" class="w-4 h-4 mr-2"></i>
+                                            View Details
+                                        </span>
+                                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-200 group-open/details:rotate-180"></i>
+                                    </summary>
+                                    <div class="mt-6 space-y-6 border-t border-gray-700 pt-6">
+                                        <div>
+                                            <h4 class="font-semibold text-white mb-3 flex items-center">
+                                                <i data-lucide="route" class="w-5 h-5 text-orange-400 mr-2"></i>
+                                                Itinerary
+                                            </h4>
+                                            <ul class="space-y-2 text-gray-300 text-sm">
+                                                <li class="flex items-start">
+                                                    <span class="text-orange-400 mr-2">•</span>
+                                                    <span><strong>6:00 AM:</strong> Assemble at base village</span>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <span class="text-orange-400 mr-2">•</span>
+                                                    <span><strong>6:30 AM:</strong> Start trek through paved pathway</span>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <span class="text-orange-400 mr-2">•</span>
+                                                    <span><strong>8:00 AM:</strong> Reach fort, explore Tanaji Gate and temples</span>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <span class="text-orange-400 mr-2">•</span>
+                                                    <span><strong>10:00 AM:</strong> Breakfast at local eateries</span>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <span class="text-orange-400 mr-2">•</span>
+                                                    <span><strong>12:00 PM:</strong> Descent and return</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-white mb-3 flex items-center">
+                                                <i data-lucide="check-circle" class="w-5 h-5 text-orange-400 mr-2"></i>
+                                                Inclusions
+                                            </h4>
+                                            <ul class="grid sm:grid-cols-2 gap-2 text-gray-300 text-sm">
+                                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Expert trek guide</li>
+                                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>First aid kit</li>
+                                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Transport from Pune</li>
+                                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Trek completion certificate</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-white mb-3 flex items-center">
+                                                <i data-lucide="backpack" class="w-5 h-5 text-orange-400 mr-2"></i>
+                                                What to Carry
+                                            </h4>
+                                            <ul class="grid sm:grid-cols-2 gap-2 text-gray-300 text-sm">
+                                                <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-orange-400 mr-2"></i>Water bottle (1-2 liters)</li>
+                                                <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-orange-400 mr-2"></i>Comfortable shoes</li>
+                                                <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-orange-400 mr-2"></i>Hat and sunscreen</li>
+                                                <li class="flex items-center"><i data-lucide="dot" class="w-4 h-4 text-orange-400 mr-2"></i>Light snacks</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </details>
+                                <div class="flex flex-col sm:flex-row gap-3 mt-6">
+                                    <a href="https://wa.me/917338224842?text=I'm%20interested%20in%20Sinhagad%20Fort%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="calendar-check" class="mr-2 w-5 h-5"></i>
+                                        Book Now
+                                    </a>
+                                    <a href="https://wa.me/917338224842?text=I%20have%20questions%20about%20Sinhagad%20Fort%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-transparent border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="message-circle" class="mr-2 w-5 h-5"></i>
+                                        Enquire
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Trek Card 2 -->
+                    <article class="bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 overflow-hidden">
+                        <div class="grid lg:grid-cols-3 gap-0">
+                            <div class="relative h-64 lg:h-auto">
+                                <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw1fHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                                    alt="Lohagad Fort Trek" 
+                                    width="600"
+                                    height="400"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="lg:col-span-2 p-8">
+                                <div class="flex flex-wrap items-center gap-3 mb-4">
+                                    <span class="bg-orange-400/10 border border-orange-400/30 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">Beginner</span>
+                                    <span class="text-gray-400 text-sm">1 Day</span>
+                                    <span class="text-gray-400 text-sm">•</span>
+                                    <span class="text-gray-400 text-sm">Easy</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-3">Lohagad Fort Trek</h3>
+                                <p class="text-gray-300 mb-4 leading-relaxed">Scenic monsoon trek with lush greenery and historical significance. Easy climb suitable for all age groups.</p>
+                                <div class="grid sm:grid-cols-2 gap-3 mb-4">
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Lonavala, Maharashtra</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="trending-up" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Altitude: 1,033 m</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="sun" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Best: Jun - Sep</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="indian-rupee" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">₹699 per person</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-3 mt-6">
+                                    <a href="https://wa.me/917338224842?text=I'm%20interested%20in%20Lohagad%20Fort%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="calendar-check" class="mr-2 w-5 h-5"></i>
+                                        Book Now
+                                    </a>
+                                    <a href="https://wa.me/917338224842?text=I%20have%20questions%20about%20Lohagad%20Fort%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-transparent border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="message-circle" class="mr-2 w-5 h-5"></i>
+                                        Enquire
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px bg-orange-500 mx-4 sm:mx-6 lg:px-8"></div>
+
+        <!-- Weekend Treks Section -->
+        <section id="weekend-treks" class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center space-x-3 mb-4">
+                        <i data-lucide="calendar-days" class="text-orange-400 w-8 h-8"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">Weekend Treks</h2>
+                    </div>
+                    <p class="text-gray-400 text-lg">Quick getaways for busy professionals</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Trek Card -->
+                    <article class="bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 overflow-hidden">
+                        <div class="grid lg:grid-cols-3 gap-0">
+                            <div class="relative h-64 lg:h-auto">
+                                <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                                    alt="Rajmachi Fort Trek" 
+                                    width="600"
+                                    height="400"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="lg:col-span-2 p-8">
+                                <div class="flex flex-wrap items-center gap-3 mb-4">
+                                    <span class="bg-orange-400/10 border border-orange-400/30 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">Weekend</span>
+                                    <span class="text-gray-400 text-sm">2 Days / 1 Night</span>
+                                    <span class="text-gray-400 text-sm">•</span>
+                                    <span class="text-gray-400 text-sm">Moderate</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-3">Rajmachi Fort Trek</h3>
+                                <p class="text-gray-300 mb-4 leading-relaxed">Experience historic forts, lush green valleys, and stunning monsoon views on this classic Maharashtra trek perfect for weekend warriors.</p>
+                                <div class="grid sm:grid-cols-2 gap-3 mb-4">
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Lonavala, Maharashtra</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="trending-up" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Altitude: 2,710 ft</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="sun" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Best: Jun - Feb</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="indian-rupee" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">₹1,499 per person</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-3 mt-6">
+                                    <a href="https://wa.me/917338224842?text=I'm%20interested%20in%20Rajmachi%20Fort%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="calendar-check" class="mr-2 w-5 h-5"></i>
+                                        Book Now
+                                    </a>
+                                    <a href="https://wa.me/917338224842?text=I%20have%20questions%20about%20Rajmachi%20Fort%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-transparent border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="message-circle" class="mr-2 w-5 h-5"></i>
+                                        Enquire
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px bg-orange-500 mx-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Mountain Treks Section -->
+        <section id="mountain-treks" class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center space-x-3 mb-4">
+                        <i data-lucide="mountain-snow" class="text-orange-400 w-8 h-8"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">Mountain Treks</h2>
+                    </div>
+                    <p class="text-gray-400 text-lg">Challenging expeditions for experienced trekkers</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Trek Card 1 -->
+                    <article class="bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 overflow-hidden">
+                        <div class="grid lg:grid-cols-3 gap-0">
+                            <div class="relative h-64 lg:h-auto">
+                                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw2fHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                                    alt="Harishchandragad Trek" 
+                                    width="600"
+                                    height="400"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="lg:col-span-2 p-8">
+                                <div class="flex flex-wrap items-center gap-3 mb-4">
+                                    <span class="bg-orange-400/10 border border-orange-400/30 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">Mountain</span>
+                                    <span class="text-gray-400 text-sm">2 Days / 1 Night</span>
+                                    <span class="text-gray-400 text-sm">•</span>
+                                    <span class="text-gray-400 text-sm">Difficult</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-3">Harishchandragad Trek</h3>
+                                <p class="text-gray-300 mb-4 leading-relaxed">Witness the magnificent Konkan Kada cliff and explore ancient caves on this challenging trek for experienced adventurers.</p>
+                                <div class="grid sm:grid-cols-2 gap-3 mb-4">
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Ahmednagar, Maharashtra</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="trending-up" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Altitude: 1,424 m</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="sun" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Best: Oct - Feb</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="indian-rupee" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">₹1,899 per person</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-3 mt-6">
+                                    <a href="https://wa.me/917338224842?text=I'm%20interested%20in%20Harishchandragad%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="calendar-check" class="mr-2 w-5 h-5"></i>
+                                        Book Now
+                                    </a>
+                                    <a href="https://wa.me/917338224842?text=I%20have%20questions%20about%20Harishchandragad%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-transparent border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="message-circle" class="mr-2 w-5 h-5"></i>
+                                        Enquire
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Trek Card 2 -->
+                    <article class="bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 overflow-hidden">
+                        <div class="grid lg:grid-cols-3 gap-0">
+                            <div class="relative h-64 lg:h-auto">
+                                <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw3fHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                                    alt="Kalsubai Peak Trek" 
+                                    width="600"
+                                    height="400"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="lg:col-span-2 p-8">
+                                <div class="flex flex-wrap items-center gap-3 mb-4">
+                                    <span class="bg-orange-400/10 border border-orange-400/30 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">Mountain</span>
+                                    <span class="text-gray-400 text-sm">1 Day</span>
+                                    <span class="text-gray-400 text-sm">•</span>
+                                    <span class="text-gray-400 text-sm">Moderate to Difficult</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-3">Kalsubai Peak Trek</h3>
+                                <p class="text-gray-300 mb-4 leading-relaxed">Conquer Maharashtra's highest peak at 1,646 meters and experience panoramic views of the Sahyadri ranges from the summit.</p>
+                                <div class="grid sm:grid-cols-2 gap-3 mb-4">
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Ahmednagar, Maharashtra</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="trending-up" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Altitude: 1,646 m</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="sun" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Best: Oct - Mar</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="indian-rupee" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">₹1,299 per person</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-3 mt-6">
+                                    <a href="https://wa.me/917338224842?text=I'm%20interested%20in%20Kalsubai%20Peak%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="calendar-check" class="mr-2 w-5 h-5"></i>
+                                        Book Now
+                                    </a>
+                                    <a href="https://wa.me/917338224842?text=I%20have%20questions%20about%20Kalsubai%20Peak%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-transparent border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="message-circle" class="mr-2 w-5 h-5"></i>
+                                        Enquire
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px bg-orange-500 mx-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Long Duration Treks Section -->
+        <section id="long-duration-treks" class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center space-x-3 mb-4">
+                        <i data-lucide="calendar-range" class="text-orange-400 w-8 h-8"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">Long Duration Treks</h2>
+                    </div>
+                    <p class="text-gray-400 text-lg">Extended expeditions for serious adventurers</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Trek Card -->
+                    <article class="bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 overflow-hidden">
+                        <div class="grid lg:grid-cols-3 gap-0">
+                            <div class="relative h-64 lg:h-auto">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwzfHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                                    alt="Sahyadri Range Multi-Day Trek" 
+                                    width="600"
+                                    height="400"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="lg:col-span-2 p-8">
+                                <div class="flex flex-wrap items-center gap-3 mb-4">
+                                    <span class="bg-orange-400/10 border border-orange-400/30 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">Long Duration</span>
+                                    <span class="text-gray-400 text-sm">5 Days / 4 Nights</span>
+                                    <span class="text-gray-400 text-sm">•</span>
+                                    <span class="text-gray-400 text-sm">Moderate to Difficult</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-3">Sahyadri Range Multi-Day Trek</h3>
+                                <p class="text-gray-300 mb-4 leading-relaxed">Experience the complete Sahyadri mountain range across 5 days with camping, multiple peaks, and deep wilderness immersion.</p>
+                                <div class="grid sm:grid-cols-2 gap-3 mb-4">
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Multiple Locations, Maharashtra</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="trending-up" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Altitude: 1,200 - 1,600 m</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="sun" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Best: Oct - Feb</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="indian-rupee" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">₹6,999 per person</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-3 mt-6">
+                                    <a href="https://wa.me/917338224842?text=I'm%20interested%20in%20Sahyadri%20Range%20Multi-Day%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="calendar-check" class="mr-2 w-5 h-5"></i>
+                                        Book Now
+                                    </a>
+                                    <a href="https://wa.me/917338224842?text=I%20have%20questions%20about%20Sahyadri%20Range%20Multi-Day%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-transparent border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="message-circle" class="mr-2 w-5 h-5"></i>
+                                        Enquire
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px bg-orange-500 mx-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Corporate / Group Treks Section -->
+        <section id="corporate-treks" class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center space-x-3 mb-4">
+                        <i data-lucide="briefcase" class="text-orange-400 w-8 h-8"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">Corporate & Group Treks</h2>
+                    </div>
+                    <p class="text-gray-400 text-lg">Team building adventures for organizations</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Trek Card -->
+                    <article class="bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 overflow-hidden">
+                        <div class="grid lg:grid-cols-3 gap-0">
+                            <div class="relative h-64 lg:h-auto">
+                                <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw1fHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                                    alt="Corporate Team Building Trek" 
+                                    width="600"
+                                    height="400"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="lg:col-span-2 p-8">
+                                <div class="flex flex-wrap items-center gap-3 mb-4">
+                                    <span class="bg-orange-400/10 border border-orange-400/30 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">Corporate</span>
+                                    <span class="text-gray-400 text-sm">Customizable</span>
+                                    <span class="text-gray-400 text-sm">•</span>
+                                    <span class="text-gray-400 text-sm">All Levels</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-3">Corporate Team Building Trek</h3>
+                                <p class="text-gray-300 mb-4 leading-relaxed">Customized trekking experiences designed for corporate groups with team-building activities, leadership challenges, and bonding exercises.</p>
+                                <div class="grid sm:grid-cols-2 gap-3 mb-4">
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Multiple Locations</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="users" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Min 15 participants</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="sun" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Year-round availability</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="indian-rupee" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Custom pricing</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-3 mt-6">
+                                    <a href="https://wa.me/917338224842?text=I'm%20interested%20in%20Corporate%20Team%20Building%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="calendar-check" class="mr-2 w-5 h-5"></i>
+                                        Request Quote
+                                    </a>
+                                    <a href="https://wa.me/917338224842?text=I%20have%20questions%20about%20Corporate%20Team%20Building%20Trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-transparent border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="message-circle" class="mr-2 w-5 h-5"></i>
+                                        Enquire
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px bg-orange-500 mx-4 sm:px-6 lg:px-8"></div>
+
+        <!-- Custom / Private Treks Section -->
+        <section id="custom-treks" class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center space-x-3 mb-4">
+                        <i data-lucide="star" class="text-orange-400 w-8 h-8"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">Custom & Private Treks</h2>
+                    </div>
+                    <p class="text-gray-400 text-lg">Personalized experiences tailored to your preferences</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Trek Card -->
+                    <article class="bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300 overflow-hidden">
+                        <div class="grid lg:grid-cols-3 gap-0">
+                            <div class="relative h-64 lg:h-auto">
+                                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw2fHxtb3VudGFpbiUyMHRyZWt8ZW58MHx8fHwxNzU4ODAwMDAwfDA&ixlib=rb-4.1.0&q=85" 
+                                    alt="Custom Private Trek" 
+                                    width="600"
+                                    height="400"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="lg:col-span-2 p-8">
+                                <div class="flex flex-wrap items-center gap-3 mb-4">
+                                    <span class="bg-orange-400/10 border border-orange-400/30 text-orange-400 px-3 py-1 rounded-full text-sm font-semibold">Custom</span>
+                                    <span class="text-gray-400 text-sm">Fully Flexible</span>
+                                    <span class="text-gray-400 text-sm">•</span>
+                                    <span class="text-gray-400 text-sm">Your Choice</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-3">Design Your Own Trek</h3>
+                                <p class="text-gray-300 mb-4 leading-relaxed">Create a personalized trekking experience tailored to your group's preferences, fitness level, schedule, and interests.</p>
+                                <div class="grid sm:grid-cols-2 gap-3 mb-4">
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Your Preferred Location</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="calendar" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Your Schedule</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="activity" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Your Difficulty Level</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-gray-300">
+                                        <i data-lucide="indian-rupee" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-sm">Custom pricing</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-3 mt-6">
+                                    <a href="https://wa.me/917338224842?text=I%20want%20to%20design%20a%20custom%20trek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="pencil" class="mr-2 w-5 h-5"></i>
+                                        Design Your Trek
+                                    </a>
+                                    <a href="https://wa.me/917338224842?text=I%20have%20questions%20about%20custom%20treks" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-transparent border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+                                        <i data-lucide="message-circle" class="mr-2 w-5 h-5"></i>
+                                        Enquire
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px bg-orange-500 mx-4 sm:mx-6 lg:mx-8"></div>
+
+        <!-- Call to Action Section -->
+        <section class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-500 to-orange-600 p-12 lg:p-16">
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
+                    <div class="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full blur-3xl -ml-48 -mb-48"></div>
+                    
+                    <div class="relative z-10 text-center max-w-3xl mx-auto">
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6">
+                            Ready to Start Your Adventure?
+                        </h2>
+                        <p class="text-lg sm:text-xl text-black/90 mb-8 leading-relaxed">
+                            Join thousands of trekkers who have discovered Maharashtra's most breathtaking trails with us. 
+                            Your next unforgettable journey is just a message away.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <a href="https://wa.me/917338224842?text=I%20want%20to%20join%20a%20trek%20with%20Deccaneventsphere" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-black hover:bg-gray-900 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-black/30">
+                                <i data-lucide="message-circle" class="mr-2 w-5 h-5"></i>
+                                WhatsApp Us
+                            </a>
+                            <a href="tel:+917338224842" class="inline-flex items-center bg-white hover:bg-gray-100 text-black font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-white/30">
+                                <i data-lucide="phone" class="mr-2 w-5 h-5"></i>
+                                Call +91 73382 24842
+                            </a>
+                        </div>
+                        <p class="mt-6 text-sm text-black/80">
+                            Available Monday to Saturday, 9 AM - 7 PM IST
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px bg-orange-500 mx-4 sm:mx-6 lg:mx-8"></div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Brand Section -->
+                    <div class="space-y-4">
+                        <div>
+                            <a href="index.html" class="inline-block">
+                                <img 
+                                    src="src/Colour Logo PNG.png" 
+                                    alt="Deccan Eventsphere - Where Every Event Peaks"
+                                    class="h-16 sm:h-20 w-auto object-contain bg-transparent"
+                                >
+                            </a>
+
+                            <p class="text-orange-400 font-medium mt-3">
+                                Power Your Run. Where Endurance Meets Energy.
+                            </p>
+                        </div>
+
+                        <p class="text-gray-300 leading-relaxed">
+                            Organizing world-class marathon events that challenge participants 
+                            while supporting meaningful causes. Join our community of passionate runners.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-semibold text-orange-400">Quick Links</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="index.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Home</a>
+                            <a href="about.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">About</a>
+                            <a href="events.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Events</a>
+                            <a href="trek-with-us.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Trekking</a>
+                            <a href="charity.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Charity</a>
+                            <a href="race-results.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Race Results</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-semibold text-orange-400">Get in Touch</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="mail" class="text-orange-400 w-5 h-5"></i>
+                                <a href="mailto:info@deccaneventsphere.com" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">
+                                    info@deccaneventsphere.com
+                                </a>
+                            </div>
+
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="phone" class="text-orange-400 w-5 h-5"></i>
+                                <a href="tel:+917338224842" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">
+                                    +91 73382 24842
+                                </a>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="map-pin" class="text-orange-400 w-5 h-5 mt-0.5"></i>
+                                <span class="text-gray-300">123 Marathon Street, Pune, Maharashtra 411001</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media and Copyright -->
+                <div class="mt-12 pt-8 border-t border-gray-800">
+                    <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
+                        
+                        <!-- Social Links -->
+                        <div class="flex items-center gap-4">
+                            
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/917338224842" target="_blank"
+                            class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-green-500 hover:border-green-500 transition-all duration-300 transform hover:scale-110"
+                            aria-label="WhatsApp">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.33 4.96L2 22l5.25-1.38a9.91 9.91 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.16a8.24 8.24 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24s8.25 3.7 8.25 8.24-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-.12-.74-.65-1.23-1.46-1.38-1.7-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.28z"/>
+                                </svg>
+                            </a>
+
+                            <!-- Instagram -->
+                            <a href="https://instagram.com/yourprofile" target="_blank"
+                            class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-pink-500 transition-all duration-300 transform hover:scale-110"
+                            aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                                </svg>
+                            </a>
+
+                            <!-- Facebook -->
+                            <a href="https://facebook.com/yourpage" target="_blank"
+                            class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 transform hover:scale-110"
+                            aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                                    <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.027 4.388 11.021 10.125 11.927v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                                </svg>
+                            </a>
+
+                            <!-- X -->
+                            <a href="https://x.com/yourprofile" target="_blank"
+                            class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-gray-700 hover:border-gray-500 transition-all duration-300 transform hover:scale-110"
+                            aria-label="X">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" fill="currentColor" class="w-5 h-5">
+                                    <path d="M714.163 519.284 1160.89 0H1055.17L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.721l409.429-475.242 326.522 475.242H1200L714.137 519.284h.026zM568.7 688.231l-47.397-67.894L144.011 80.694h162.604l304.797 436.196 47.397 67.894 395.974 566.566H892.179L568.7 688.257v-.026z"/>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Copyright -->
+                        <p class="text-gray-400 text-sm text-center">
+                            © 2026 Deccaneventsphere. All rights reserved.
+                        </p>
+
+                        <!-- Credit -->
+                        <p class="text-gray-500 text-xs text-center lg:text-right">
+                            Crafted with ❤️ by 
+                            <a href="https://contact.abhiwebstudio.in" target="_blank"
+                            class="text-orange-400 hover:underline hover:text-orange-300">
+                                Abhiwebstudio
+                            </a> · Custom websites for businesses & events
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <!-- JavaScript -->
+    <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+
+    // Lucide (safe)
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+
+    /* ================= HEADER ================= */
+    const header = document.getElementById('header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('header-scrolled', window.scrollY > 20);
+        });
+    }
+
+    /* ================= MOBILE MENU ================= */
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // STOP if menu elements are missing
+    if (!mobileMenuBtn || !mobileMenu) {
+        console.warn('Mobile menu elements missing');
+        return;
+    }
+
+    mobileMenuBtn.addEventListener('click', function () {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        const icon = mobileMenuBtn.querySelector('i');
+
+        mobileMenu.classList.toggle('hidden', !isHidden);
+
+        if (icon) {
+            icon.setAttribute('data-lucide', isHidden ? 'x' : 'menu');
+            if (window.lucide) lucide.createIcons();
+        }
+    });
+
+    /* ================= CLOSE MENU ON LINK CLICK ================= */
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) {
+                icon.setAttribute('data-lucide', 'menu');
+                if (window.lucide) lucide.createIcons();
+            }
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>
