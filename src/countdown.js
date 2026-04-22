@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function initializeCountdown() {
     // 🎯 Set event start date & time
-    const eventStartDate = new Date('2025-10-02T21:55:00').getTime();
+    const eventStartDate = new Date('2026-09-20T00:00:00').getTime();
     const eventEndDate = eventStartDate + (24 * 60 * 60 * 1000); // +1 day
 
     function updateCountdown() {

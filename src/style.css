@@ -59,6 +59,16 @@
     }
 }
 
+/* ── NEW: Mobile hero pan animation (right → left, then reverses) ── */
+@keyframes hero-pan-mobile {
+    0% {
+        background-position: right center;
+    }
+    100% {
+        background-position: left center;
+    }
+}
+
 /* Utility classes */
 .animate-fade-in {
     animation: fade-in 1s ease-out;
@@ -95,9 +105,35 @@
     filter: drop-shadow(0 0 36px rgba(240, 237, 235, 0.8));
 }
 
-/* Hero background */
+/* =============================================
+   HERO BACKGROUND
+   - Desktop: centered (default)
+   - Tablet (≤768px): anchored left, slow pan
+   - Mobile (≤480px): anchored left top, faster pan
+   ============================================= */
 .hero-bg {
-    background-image: url('https://images.unsplash.com/photo-1667781838690-5f32ea0ccea6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxtYXJhdGhvbiUyMHJ1bm5lcnN8ZW58MHx8fHwxNzU4Nzk5OTkzfDA&ixlib=rb-4.1.0&q=85');
+    background-image: url('img/main\ 1.jpeg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .hero-bg {
+        background-position: left center;
+        background-size: 160%;
+        animation: hero-pan-mobile 14s linear infinite alternate;
+    }
+}
+
+/* Small phone */
+@media (max-width: 480px) {
+    .hero-bg {
+        background-position: left top;
+        background-size: 200%;
+        animation: hero-pan-mobile 12s linear infinite alternate;
+    }
 }
 
 /* Smooth scrolling */
@@ -183,11 +219,11 @@ img:not([src]) {
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .gallery-grid .md\:col-span-2 {
         grid-column: span 1;
     }
-    
+
     .gallery-grid .md\:row-span-2 {
         grid-row: span 1;
     }
@@ -195,10 +231,9 @@ img:not([src]) {
 
 
 /* ============================================ */
-/* TIMELINE STYLES  */
+/* TIMELINE STYLES                              */
 /* ============================================ */
 
-/* Enhanced Timeline */
 .timeline {
     position: relative;
     max-width: 800px;
@@ -310,24 +345,24 @@ img:not([src]) {
     .timeline::before {
         left: 2rem;
     }
-    
+
     .timeline-item::before {
         left: 2rem;
         transform: translateX(-50%);
     }
-    
+
     .timeline-content {
         width: calc(100% - 4rem);
         margin-left: 4rem;
     }
-    
+
     .timeline-item:nth-child(even) .timeline-content {
         margin-left: 4rem;
         margin-right: 0;
     }
 }
 
-/* Reduced Motion */
+/* Reduced Motion — disables pan animation for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -335,6 +370,13 @@ img:not([src]) {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+
+    /* Keep hero image static at left on mobile if motion is reduced */
+    .hero-bg {
+        background-position: left center !important;
+        background-size: cover !important;
+        animation: none !important;
     }
 }
 
@@ -397,7 +439,10 @@ img:not([src]) {
 }
 
 
-/* Race Results Section Styles */
+/* ============================================ */
+/* RACE RESULTS SECTION                         */
+/* ============================================ */
+
 .race-card {
     position: relative;
     overflow: hidden;
@@ -517,7 +562,7 @@ img:not([src]) {
     height: 1.25rem;
 }
 
-/* Mobile Responsive Styles */
+/* Race card responsive */
 @media (max-width: 768px) {
     .race-card {
         height: 320px;
@@ -567,7 +612,11 @@ img:not([src]) {
     }
 }
 
-/* Button hover enhancements */
+
+/* ============================================ */
+/* BUTTONS                                      */
+/* ============================================ */
+
 .btn-primary {
     background: #f97316;
     color: #000;

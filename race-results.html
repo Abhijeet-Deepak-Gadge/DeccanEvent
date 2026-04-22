@@ -8,7 +8,7 @@
     <meta name="keywords" content="race results, marathon results, running times, Deccaneventsphere, Maharashtra marathon results">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://fitforceclub.com/race-results.html">
+    <link rel="canonical" href="https://deccaneventsphere.com/race-results.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -56,7 +56,7 @@
                 <!-- Logo and Brand -->
                 <a href="index.html" class="flex flex-col">
                     <img 
-                        src="src/Colour Logo PNG.png" 
+                        src="src/img/Logo.png" 
                         alt="Deccan Eventsphere - Where Every Event Peaks" 
                         class="h-12 sm:h-14 w-auto object-contain bg-transparent hero-logo"
                     />
@@ -68,7 +68,7 @@
                     <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 font-medium">About</a>
                     <a href="events.html" class="text-white hover:text-orange-400 transition-colors duration-200 font-medium">Events</a>
                     <a href="trek-with-us.html" class="text-white hover:text-orange-400 transition-colors duration-200 font-medium">Trekking</a>
-                    <a href="charity.html" class="text-white hover:text-orange-400 transition-colors duration-200 font-medium">Charity</a>
+                    <a href="gallery.html" class="text-white hover:text-orange-400 transition-colors duration-200 font-medium">Gallery</a>
                     <a href="race-results.html" class="text-orange-400 hover:text-orange-300 transition-colors duration-200 font-medium" aria-current="page">Race Results</a>
                 </nav>
 
@@ -84,7 +84,7 @@
                 <a href="about.html" class="block px-6 py-3 text-white hover:text-orange-400 hover:bg-orange-400/10 transition-all duration-200">About</a>
                 <a href="events.html" class="block px-6 py-3 text-white hover:text-orange-400 hover:bg-orange-400/10 transition-all duration-200">Events</a>
                 <a href="trek-with-us.html" class="block px-6 py-3 text-white hover:text-orange-400 hover:bg-orange-400/10 transition-all duration-200">Trekking</a>
-                <a href="charity.html" class="block px-6 py-3 text-white hover:text-orange-400 hover:bg-orange-400/10 transition-all duration-200">Charity</a>
+                <a href="gallery.html" class="block px-6 py-3 text-white hover:text-orange-400 hover:bg-orange-400/10 transition-all duration-200">Gallery</a>
                 <a href="race-results.html" class="block px-6 py-3 text-orange-400 bg-orange-400/10" aria-current="page">Race Results</a>
             </div>
         </div>
@@ -93,7 +93,7 @@
     <main id="main-content" class="pt-20">
         <!-- Hero Section -->
         <section class="relative py-24 lg:py-32 overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHxtYXJhdGhvbiUyMHJ1bm5lcnN8ZW58MHx8fHwxNzU4Nzk5OTkzfDA&ixlib=rb-4.1.0&q=85');">
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('src/img/main4.jpeg');">
                 <div class="absolute inset-0 bg-black/70"></div>
             </div>
             <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -113,14 +113,14 @@
                     <button onclick="filterByYear('all')" class="year-filter-btn active bg-orange-500 text-black px-6 py-2 rounded-full font-medium hover:bg-orange-400 transition-colors">
                         All Years
                     </button>
+                    <button onclick="filterByYear('2026')" class="year-filter-btn bg-gray-700 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-500 hover:text-black transition-colors">
+                        2026
+                    </button>
+                    <button onclick="filterByYear('2025')" class="year-filter-btn bg-gray-700 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-500 hover:text-black transition-colors">
+                        2025
+                    </button>
                     <button onclick="filterByYear('2024')" class="year-filter-btn bg-gray-700 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-500 hover:text-black transition-colors">
                         2024
-                    </button>
-                    <button onclick="filterByYear('2023')" class="year-filter-btn bg-gray-700 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-500 hover:text-black transition-colors">
-                        2023
-                    </button>
-                    <button onclick="filterByYear('2022')" class="year-filter-btn bg-gray-700 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-500 hover:text-black transition-colors">
-                        2022
                     </button>
                 </div>
             </div>
@@ -130,287 +130,204 @@
         <section class="py-16 lg:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
-                <!-- 2024 Events -->
+                <!-- 2026 Events -->
                 
+                <div class="year-results" data-year="2026">
+                    <div class="flex items-center space-x-3 mb-12">
+                        <i data-lucide="calendar" class="text-orange-400 w-8 h-8"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">2026 Events</h2>
+                        <span class="bg-orange-500 text-black px-3 py-1 rounded-full text-sm font-bold">LATEST</span>
+                    </div>
+                    
+                    <!--Tuljapur Marathon-->
+                    <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                        <div class="race-card">
+                            <div class="race-card-bg" style="background-image: url('src/img/tuljapur3.jpeg');"></div>
+                            <div class="race-card-overlay"></div>
+                            <div class="race-card-badge">2026</div>
+                            <div class="race-card-content">
+                                <h3 class="race-card-title">Tuljapur Marathon 2026</h3>
+                                <div class="race-card-date">
+                                    <i data-lucide="calendar" class="race-stat-icon"></i>
+                                    <span>March 15, 2026</span>
+                                </div>
+                                <div class="race-card-stats">
+                                    <div class="race-stat">
+                                        <i data-lucide="users" class="race-stat-icon"></i>
+                                        <span>2,000+ participants</span>
+                                    </div>
+                                    <div class="race-stat">
+                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
+                                        <span>Tuljapur, Maharashtra</span>
+                                    </div>
+                                </div>
+                                <a href="https://alpharacingsolution.com/event/result/786ed66a-5150-4b92-91e5-7c04fa10f78e" target="_blank" rel="noopener noreferrer" class="race-card-button">
+                                    View Complete Results
+                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--Pune city Marathon-->
+                        <div class="race-card">
+                            <div class="race-card-bg" style="background-image: url('https://images.unsplash.com/photo-1524646349956-1590eacfa324?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw0fHxtYXJhdGhvbiUyMHJ1bm5lcnN8ZW58MHx8fHwxNzU4Nzk5OTkzfDA&ixlib=rb-4.1.0&q=85');"></div>
+                            <div class="race-card-overlay"></div>
+                            <div class="race-card-badge">2026</div>
+                            <div class="race-card-content">
+                                <h3 class="race-card-title">Pune City Marathon 2026</h3>
+                                <div class="race-card-date">
+                                    <i data-lucide="calendar" class="race-stat-icon"></i>
+                                    <span>March 1, 2026</span>
+                                </div>
+                                <div class="race-card-stats">
+                                    <div class="race-stat">
+                                        <i data-lucide="users" class="race-stat-icon"></i>
+                                        <span>10,000+ participants</span>
+                                    </div>
+                                    <div class="race-stat">
+                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
+                                        <span>Pune , Maharashtra</span>
+                                    </div>
+                                </div>
+                                <a href="https://sportstimingsolutions.in/results?q=eyJlX25hbWUiOiJQdW5lIENpdHkgTWFyYXRob24gLSAzcmQgRWRpdGlvbiIsImVfaWQiOjkwOTUxfQ%3D%3D" target="_blank" rel="noopener noreferrer" class="race-card-button">
+                                    View Complete Results
+                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- 2025 Events-->
+
+                <div class="year-results" data-year="2025">
+                    <div class="flex items-center space-x-3 mb-12">
+                        <i data-lucide="calendar" class="text-orange-400 w-8 h-8"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">2025 Events</h2>
+                    </div>
+                    
+                    <!-- Sadri  Marathon -->
+                    <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                        <div class="race-card">
+                            <div class="race-card-bg" style="background-image: url('src/img/sadri\ photo.jpeg');"></div>
+                            <div class="race-card-overlay"></div>
+                            <div class="race-card-badge">2025</div>
+                            <div class="race-card-content">
+                                <h3 class="race-card-title">Sadri Marathon 2025</h3>
+                                <div class="race-card-date">
+                                    <i data-lucide="calendar" class="race-stat-icon"></i>
+                                    <span>December 28, 2025</span>
+                                </div>
+                                <div class="race-card-stats">
+                                    <div class="race-stat">
+                                        <i data-lucide="users" class="race-stat-icon"></i>
+                                        <span>5,000+ participants</span>
+                                    </div>
+                                    <div class="race-stat">
+                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
+                                        <span>Sadri , Rajasthan</span>
+                                    </div>
+                                </div>
+                                <a href="https://alpharacingsolution.com/event/bib/bb0d71aa-daf8-4863-bc19-1798d1c07b09" target="_blank" rel="noopener noreferrer" class="race-card-button">
+                                    View Complete Results
+                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Sinhagad Marathon -->
+                        <div class="race-card">
+                            <div class="race-card-bg" style="background-image: url('src/img/sinhagad\ logo.png');"></div>
+                            <div class="race-card-overlay"></div>
+                            <div class="race-card-badge">2025</div>
+                            <div class="race-card-content">
+                                <h3 class="race-card-title">Sinhagad Marathon 2025</h3>
+                                <div class="race-card-date">
+                                    <i data-lucide="calendar" class="race-stat-icon"></i>
+                                    <span>September 28, 2025</span>
+                                </div>
+                                <div class="race-card-stats">
+                                    <div class="race-stat">
+                                        <i data-lucide="users" class="race-stat-icon"></i>
+                                        <span>2,200+ participants</span>
+                                    </div>
+                                    <div class="race-stat">
+                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
+                                        <span>Pune , Maharashtra</span>
+                                    </div>
+                                </div>
+                                <a href="https://alpharacingsolution.com/event/bib/fdd576bd-7f8c-4184-9c79-a79383b912be" target="_blank" rel="noopener noreferrer" class="race-card-button">
+                                    View Complete Results
+                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Vrushathon marathon -->
+                        <div class="race-card">
+                            <div class="race-card-bg" style="background-image: url('src/img/vhm1.jpeg');"></div>
+                            <div class="race-card-overlay"></div>
+                            <div class="race-card-badge">2025</div>
+                            <div class="race-card-content">
+                                <h3 class="race-card-title">Vrushathon Marathon 2025</h3>
+                                <div class="race-card-date">
+                                    <i data-lucide="calendar" class="race-stat-icon"></i>
+                                    <span>June 7, 2025</span>
+                                </div>
+                                <div class="race-card-stats">
+                                    <div class="race-stat">
+                                        <i data-lucide="users" class="race-stat-icon"></i>
+                                        <span>10,000+ participants</span>
+                                    </div>
+                                    <div class="race-stat">
+                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
+                                        <span>Pune, Maharashtra</span>
+                                    </div>
+                                </div>
+                                <a href="https://alpharacingsolution.com/event/bib/68787d12-f9b2-4ae6-9509-d2f998f3d9d2" target="_blank" rel="noopener noreferrer" class="race-card-button">
+                                    View Complete Results
+                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 Events-->
+
                 <div class="year-results" data-year="2024">
                     <div class="flex items-center space-x-3 mb-12">
                         <i data-lucide="calendar" class="text-orange-400 w-8 h-8"></i>
                         <h2 class="text-3xl lg:text-4xl font-bold">2024 Events</h2>
-                        <span class="bg-orange-500 text-black px-3 py-1 rounded-full text-sm font-bold">LATEST</span>
                     </div>
                     
-                    <!--Mumbai Marathon-->
+                    <!-- Pune City Marathon -->
                     <div class="grid lg:grid-cols-2 gap-8 mb-16">
                         <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHxtYXJhdGhvbiUyMHJ1bm5lcnN8ZW58MHx8fHwxNzU4Nzk5OTkzfDA&ixlib=rb-4.1.0&q=85');"></div>
+                            <div class="race-card-bg" style="background-image: url('src/img/vhm6.jpeg');"></div>
                             <div class="race-card-overlay"></div>
                             <div class="race-card-badge">2024</div>
                             <div class="race-card-content">
-                                <h3 class="race-card-title">Mumbai City Marathon 2024</h3>
+                                <h3 class="race-card-title">Pune City Marathon 2024</h3>
                                 <div class="race-card-date">
                                     <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>December 15, 2024</span>
+                                    <span>Feb 25, 2024</span>
                                 </div>
                                 <div class="race-card-stats">
                                     <div class="race-stat">
                                         <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>2,500+ participants</span>
+                                        <span>10,000+ participants</span>
                                     </div>
                                     <div class="race-stat">
                                         <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>Marine Drive, Mumbai</span>
+                                        <span>Pune, Maharashtra</span>
                                     </div>
                                 </div>
-                                <button onclick="openExternalResults('mumbai-2024')" class="race-card-button">
+                                <a href="https://alpharacingsolution.com/event/result/232f9d60-fae8-4a4a-a96c-384b0cc2e387?noheader=true" target="_blank" rel="noopener noreferrer" class="race-card-button">
                                     View Complete Results
                                     <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!--Pune Marathon-->
-                        <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('https://images.unsplash.com/photo-1524646349956-1590eacfa324?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw0fHxtYXJhdGhvbiUyMHJ1bm5lcnN8ZW58MHx8fHwxNzU4Nzk5OTkzfDA&ixlib=rb-4.1.0&q=85');"></div>
-                            <div class="race-card-overlay"></div>
-                            <div class="race-card-badge">2024</div>
-                            <div class="race-card-content">
-                                <h3 class="race-card-title">Pune Winter Run 2024</h3>
-                                <div class="race-card-date">
-                                    <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>November 20, 2024</span>
-                                </div>
-                                <div class="race-card-stats">
-                                    <div class="race-stat">
-                                        <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>1,200+ participants</span>
-                                    </div>
-                                    <div class="race-stat">
-                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>Shivajinagar, Pune</span>
-                                    </div>
-                                </div>
-                                <button onclick="openExternalResults('pune-2024')" class="race-card-button">
-                                    View Complete Results
-                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!--Nashik Marathon-->
-                        <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('https://images.unsplash.com/photo-1571008887538-b36bb32f4571?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw3fHxtYXJhdGhvbiUyMHJ1bm5lcnN8ZW58MHx8fHwxNzU4Nzk5OTkzfDA&ixlib=rb-4.1.0&q=85');"></div>
-                            <div class="race-card-overlay"></div>
-                            <div class="race-card-badge">2024</div>
-                            <div class="race-card-content">
-                                <h3 class="race-card-title">Nashik Heritage Run 2024</h3>
-                                <div class="race-card-date">
-                                    <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>October 10, 2024</span>
-                                </div>
-                                <div class="race-card-stats">
-                                    <div class="race-stat">
-                                        <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>800+ participants</span>
-                                    </div>
-                                    <div class="race-stat">
-                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>Old Nashik, Nashik</span>
-                                    </div>
-                                </div>
-                                <button onclick="openExternalResults('nashik-2024')" class="race-card-button">
-                                    View Complete Results
-                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2023 Events-->
-
-                <div class="year-results" data-year="2023">
-                    <div class="flex items-center space-x-3 mb-12">
-                        <i data-lucide="calendar" class="text-orange-400 w-8 h-8"></i>
-                        <h2 class="text-3xl lg:text-4xl font-bold">2023 Events</h2>
-                    </div>
-                    
-                    <!-- Sinhagad Marathon -->
-                    <div class="grid lg:grid-cols-2 gap-8 mb-16">
-                        <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxMHx8bWFyYXRob24lMjBydW5uZXJzfGVufDB8fHx8MTc1ODc5OTk5M3ww&ixlib=rb-4.1.0&q=85');"></div>
-                            <div class="race-card-overlay"></div>
-                            <div class="race-card-badge">2023</div>
-                            <div class="race-card-content">
-                                <h3 class="race-card-title">Sinhagad Challenge 2023</h3>
-                                <div class="race-card-date">
-                                    <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>September 24, 2023</span>
-                                </div>
-                                <div class="race-card-stats">
-                                    <div class="race-stat">
-                                        <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>1,800+ participants</span>
-                                    </div>
-                                    <div class="race-stat">
-                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>Sinhagad Fort, Pune</span>
-                                    </div>
-                                </div>
-                                <button onclick="openExternalResults('sinhagad-2023')" class="race-card-button">
-                                    View Complete Results
-                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Mumbai Monsoon Marathon -->
-                        <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('https://images.unsplash.com/photo-1513593771513-7b58b6c4af38?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxNXx8bWFyYXRob24lMjBydW5uZXJzfGVufDB8fHx8MTc1ODc5OTk5M3ww&ixlib=rb-4.1.0&q=85');"></div>
-                            <div class="race-card-overlay"></div>
-                            <div class="race-card-badge">2023</div>
-                            <div class="race-card-content">
-                                <h3 class="race-card-title">Mumbai Monsoon Marathon 2023</h3>
-                                <div class="race-card-date">
-                                    <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>August 13, 2023</span>
-                                </div>
-                                <div class="race-card-stats">
-                                    <div class="race-stat">
-                                        <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>2,200+ participants</span>
-                                    </div>
-                                    <div class="race-stat">
-                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>Bandra Kurla, Mumbai</span>
-                                    </div>
-                                </div>
-                                <button onclick="openExternalResults('mumbai-monsoon-2023')" class="race-card-button">
-                                    View Complete Results
-                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Kolhapur Run -->
-                        <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('https://images.unsplash.com/photo-1530549387789-4c1017266635?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyMHx8bWFyYXRob24lMjBydW5uZXJzfGVufDB8fHx8MTc1ODc5OTk5M3ww&ixlib=rb-4.1.0&q=85');"></div>
-                            <div class="race-card-overlay"></div>
-                            <div class="race-card-badge">2023</div>
-                            <div class="race-card-content">
-                                <h3 class="race-card-title">Kolhapur Royal Run 2023</h3>
-                                <div class="race-card-date">
-                                    <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>March 19, 2023</span>
-                                </div>
-                                <div class="race-card-stats">
-                                    <div class="race-stat">
-                                        <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>1,000+ participants</span>
-                                    </div>
-                                    <div class="race-stat">
-                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>New Palace, Kolhapur</span>
-                                    </div>
-                                </div>
-                                <button onclick="openExternalResults('kolhapur-2023')" class="race-card-button">
-                                    View Complete Results
-                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2022 Events-->
-
-                <div class="year-results" data-year="2022">
-                    <div class="flex items-center space-x-3 mb-12">
-                        <i data-lucide="calendar" class="text-orange-400 w-8 h-8"></i>
-                        <h2 class="text-3xl lg:text-4xl font-bold">2022 Events</h2>
-                    </div>
-                    
-                    <!-- Sinhagad Marathon -->
-                    <div class="grid lg:grid-cols-2 gap-8 mb-16">
-                        <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxMHx8bWFyYXRob24lMjBydW5uZXJzfGVufDB8fHx8MTc1ODc5OTk5M3ww&ixlib=rb-4.1.0&q=85');"></div>
-                            <div class="race-card-overlay"></div>
-                            <div class="race-card-badge">2022</div>
-                            <div class="race-card-content">
-                                <h3 class="race-card-title">Sinhagad Challenge 2022</h3>
-                                <div class="race-card-date">
-                                    <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>September 24, 2022</span>
-                                </div>
-                                <div class="race-card-stats">
-                                    <div class="race-stat">
-                                        <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>1,800+ participants</span>
-                                    </div>
-                                    <div class="race-stat">
-                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>Sinhagad Fort, Pune</span>
-                                    </div>
-                                </div>
-                                <button onclick="openExternalResults('sinhagad-2023')" class="race-card-button">
-                                    View Complete Results
-                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Mumbai Monsoon Marathon -->
-                        <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('https://images.unsplash.com/photo-1513593771513-7b58b6c4af38?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxNXx8bWFyYXRob24lMjBydW5uZXJzfGVufDB8fHx8MTc1ODc5OTk5M3ww&ixlib=rb-4.1.0&q=85');"></div>
-                            <div class="race-card-overlay"></div>
-                            <div class="race-card-badge">2022</div>
-                            <div class="race-card-content">
-                                <h3 class="race-card-title">Mumbai Monsoon Marathon 2022</h3>
-                                <div class="race-card-date">
-                                    <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>August 13, 2022</span>
-                                </div>
-                                <div class="race-card-stats">
-                                    <div class="race-stat">
-                                        <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>2,200+ participants</span>
-                                    </div>
-                                    <div class="race-stat">
-                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>Bandra Kurla, Mumbai</span>
-                                    </div>
-                                </div>
-                                <button onclick="openExternalResults('mumbai-monsoon-2023')" class="race-card-button">
-                                    View Complete Results
-                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Kolhapur Run -->
-                        <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('https://images.unsplash.com/photo-1530549387789-4c1017266635?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyMHx8bWFyYXRob24lMjBydW5uZXJzfGVufDB8fHx8MTc1ODc5OTk5M3ww&ixlib=rb-4.1.0&q=85');"></div>
-                            <div class="race-card-overlay"></div>
-                            <div class="race-card-badge">2022</div>
-                            <div class="race-card-content">
-                                <h3 class="race-card-title">Kolhapur Royal Run 2022</h3>
-                                <div class="race-card-date">
-                                    <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>March 19, 2022</span>
-                                </div>
-                                <div class="race-card-stats">
-                                    <div class="race-stat">
-                                        <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>1,000+ participants</span>
-                                    </div>
-                                    <div class="race-stat">
-                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>New Palace, Kolhapur</span>
-                                    </div>
-                                </div>
-                                <button onclick="openExternalResults('kolhapur-2023')" class="race-card-button">
-                                    View Complete Results
-                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -423,17 +340,17 @@
                 <div class="text-center mb-12">
                     <h2 class="text-3xl lg:text-4xl font-bold mb-6">Event Statistics</h2>
                     <p class="text-gray-200 text-lg max-w-2xl mx-auto">
-                        Celebrating achievements across all FitForce Club events.
+                        Celebrating achievements across all Deccan EventSphare Club events.
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="bg-black/50 backdrop-blur-md p-6 rounded-xl border border-orange-500/30 text-center">
-                        <div class="text-3xl font-bold text-orange-400 mb-2">15,000+</div>
+                        <div class="text-3xl font-bold text-orange-400 mb-2">50,000+</div>
                         <div class="text-gray-300">Total Participants</div>
                     </div>
                     <div class="bg-black/50 backdrop-blur-md p-6 rounded-xl border border-orange-500/30 text-center">
-                        <div class="text-3xl font-bold text-orange-400 mb-2">9</div>
+                        <div class="text-3xl font-bold text-orange-400 mb-2">10+</div>
                         <div class="text-gray-300">Events Completed</div>
                     </div>
                     <div class="bg-black/50 backdrop-blur-md p-6 rounded-xl border border-orange-500/30 text-center">
@@ -441,8 +358,8 @@
                         <div class="text-gray-300">Average Completion Rate</div>
                     </div>
                     <div class="bg-black/50 backdrop-blur-md p-6 rounded-xl border border-orange-500/30 text-center">
-                        <div class="text-3xl font-bold text-orange-400 mb-2">₹75L+</div>
-                        <div class="text-gray-300">Charity Funds Raised</div>
+                        <div class="text-3xl font-bold text-orange-400 mb-2">5+</div>
+                        <div class="text-gray-300">Multiple States</div>
                     </div>
                 </div>
             </div>
@@ -453,11 +370,11 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl lg:text-4xl font-bold mb-6">Join Our Next Event</h2>
                 <p class="text-gray-200 text-lg mb-8 max-w-2xl mx-auto">
-                    Be part of our growing community and create your own racing legacy with FitForce Club.
+                    Be part of our growing community and create your own racing legacy with Deccan EventSphare Club.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="sinhagad-marathon.html" class="inline-flex items-center bg-orange-500 hover:bg-orange-400 text-black font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-orange-500/25">
-                        Register for Sinhagad Marathon 2025
+                    <a href="https://whatsapp.com/channel/0029Vb7Tqj9HFxP96rmyEG0F" class="inline-flex items-center bg-orange-500 hover:bg-orange-400 text-black font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-orange-500/25">
+                        Join our channel
                         <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
                     </a>
                     <a href="events.html" class="inline-flex items-center bg-transparent border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
@@ -478,7 +395,7 @@
                         <div>
                             <a href="index.html" class="inline-block">
                                 <img 
-                                    src="src/Colour Logo PNG.png" 
+                                    src="src/img/Logo.png" 
                                     alt="Deccan Eventsphere - Where Every Event Peaks"
                                     class="h-16 sm:h-20 w-auto object-contain bg-transparent"
                                 >
@@ -503,7 +420,7 @@
                             <a href="about.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">About</a>
                             <a href="events.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Events</a>
                             <a href="trek-with-us.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Trekking</a>
-                            <a href="charity.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Charity</a>
+                            <a href="gallery.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Gallery</a>
                             <a href="race-results.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Race Results</a>
                         </div>
                     </div>
@@ -521,14 +438,14 @@
 
                             <div class="flex items-center space-x-3">
                                 <i data-lucide="phone" class="text-orange-400 w-5 h-5"></i>
-                                <a href="tel:+917338224842" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">
-                                    +91 73382 24842
+                                <a href="tel:+919356328972" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">
+                                    +91 93563 28972
                                 </a>
                             </div>
 
                             <div class="flex items-start space-x-3">
                                 <i data-lucide="map-pin" class="text-orange-400 w-5 h-5 mt-0.5"></i>
-                                <span class="text-gray-300">123 Marathon Street, Pune, Maharashtra 411001</span>
+                                <span class="text-gray-300">Shop no : C14 , Shri Alok Nagari CTS NO: 1305,Kasba Peth, Pune - 411011</span>
                             </div>
                         </div>
                     </div>
@@ -542,7 +459,7 @@
                         <div class="flex items-center gap-4">
                             
                             <!-- WhatsApp -->
-                            <a href="https://wa.me/917338224842" target="_blank"
+                            <a href="https://wa.me/919370380810" target="_blank"
                             class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-green-500 hover:border-green-500 transition-all duration-300 transform hover:scale-110"
                             aria-label="WhatsApp">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
@@ -551,7 +468,7 @@
                             </a>
 
                             <!-- Instagram -->
-                            <a href="https://instagram.com/yourprofile" target="_blank"
+                            <a href="https://www.instagram.com/deccaneventsphere?igsh=eWViYXZtNXIzeHho" target="_blank"
                             class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-pink-500 transition-all duration-300 transform hover:scale-110"
                             aria-label="Instagram">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
@@ -560,20 +477,11 @@
                             </a>
 
                             <!-- Facebook -->
-                            <a href="https://facebook.com/yourpage" target="_blank"
+                            <a href="https://www.facebook.com/share/1DivVeFBGU/" target="_blank"
                             class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 transform hover:scale-110"
                             aria-label="Facebook">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
                                     <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.027 4.388 11.021 10.125 11.927v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-                                </svg>
-                            </a>
-
-                            <!-- X -->
-                            <a href="https://x.com/yourprofile" target="_blank"
-                            class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-gray-700 hover:border-gray-500 transition-all duration-300 transform hover:scale-110"
-                            aria-label="X">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" fill="currentColor" class="w-5 h-5">
-                                    <path d="M714.163 519.284 1160.89 0H1055.17L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.721l409.429-475.242 326.522 475.242H1200L714.137 519.284h.026zM568.7 688.231l-47.397-67.894L144.011 80.694h162.604l304.797 436.196 47.397 67.894 395.974 566.566H892.179L568.7 688.257v-.026z"/>
                                 </svg>
                             </a>
                         </div>
