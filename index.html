@@ -89,7 +89,6 @@
                         >
                     </div>
 
-
                     <p class="text-xl sm:text-2xl lg:text-3xl text-orange-300 font-medium mb-8">
                         Power Your Run. Where Endurance Meets Energy.
                     </p>
@@ -126,14 +125,29 @@
 
                 <!-- Events Grid -->
                 <div class="space-y-8">
-                    
-                    <!-- Event 1 -->
+
+                    <!-- ===================== -->
+                    <!-- Event 1: Ranjangaon   -->
+                    <!-- ===================== -->
                     <div class="group relative bg-gradient-to-br from-black to-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-orange-400 transition-all duration-500 shadow-2xl hover:shadow-orange-400/20">
                         <div class="absolute top-0 right-0 w-64 h-64 bg-orange-400/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
                         
-                        <div class="relative grid lg:grid-cols-2 gap-0">
-                            <!-- Content Side -->
-                            <div class="p-8 lg:p-12 flex flex-col justify-center space-y-6">
+                        <!-- 
+                            FIX: Use flex-col on mobile so image (order-1) renders ABOVE content (order-2).
+                            On lg: switch to grid with 2 cols, image returns to right side (order-last).
+                        -->
+                        <div class="relative flex flex-col lg:grid lg:grid-cols-2">
+
+                            <!-- Image Side — order-1 on mobile (top), order-last on desktop (right) -->
+                            <div class="relative h-[260px] sm:h-[320px] lg:h-[480px] order-1 lg:order-last">
+                                <img src="src/img/ranjangaon2.jpeg" 
+                                    alt="Ranjangaon Marathon" 
+                                    class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-gray-900/80 lg:via-transparent lg:to-transparent"></div>
+                            </div>
+
+                            <!-- Content Side — order-2 on mobile (bottom), order-first on desktop (left) -->
+                            <div class="p-8 lg:p-12 flex flex-col justify-center space-y-6 order-2 lg:order-first">
                                 <div class="inline-flex items-center space-x-2 bg-orange-400/10 border border-orange-400/30 rounded-full px-4 py-2 w-fit">
                                     <i data-lucide="calendar" class="w-4 h-4 text-orange-400"></i>
                                     <span class="text-sm font-semibold text-orange-400">Marathon Event</span>
@@ -160,7 +174,7 @@
                                         <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
                                             <i data-lucide="users" class="w-5 h-5 text-orange-400"></i>
                                         </div>
-                                        <span class="text-lg"> 3k ,5K & 10K  Categories</span>
+                                        <span class="text-lg">3k, 5K &amp; 10K Categories</span>
                                     </div>
                                 </div>
                                 
@@ -173,14 +187,6 @@
                                     <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
                                 </a>
                             </div>
-                            
-                            <!-- Image Side -->
-                            <div class="relative h-[400px] lg:h-auto">
-                                <img src="src/img/ranjangaon2.jpeg" 
-                                    alt="Ranjangaon Marathon" 
-                                    class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-gray-900/80 lg:via-transparent lg:to-transparent"></div>
-                            </div>
                         </div>
                     </div>
 
@@ -189,21 +195,29 @@
                         <div class="h-px w-32 bg-gradient-to-r from-transparent via-orange-400/50 to-transparent"></div>
                     </div>
 
-                    <!-- Event 2 -->
+                    <!-- ====================== -->
+                    <!-- Event 2: Vrukshathon  -->
+                    <!-- ====================== -->
                     <div class="group relative bg-gradient-to-br from-black to-gray-900 rounded-3xl overflow-hidden border border-gray-700 hover:border-orange-400 transition-all duration-500 shadow-2xl hover:shadow-orange-400/20">
                         <div class="absolute top-0 left-0 w-64 h-64 bg-orange-400/10 rounded-full blur-3xl -ml-32 -mt-32"></div>
                         
-                        <div class="relative grid lg:grid-cols-2 gap-0">
-                            <!-- Image Side -->
-                            <div class="relative h-[400px] lg:h-auto order-2 lg:order-1">
+                        <!--
+                            Event 2: Image should appear on LEFT on desktop, TOP on mobile.
+                            flex-col: image (order-1) on top, content (order-2) below.
+                            lg:grid: image gets order-1 (left), content gets order-2 (right).
+                        -->
+                        <div class="relative flex flex-col lg:grid lg:grid-cols-2">
+
+                            <!-- Image Side — top on mobile (order-1), left on desktop (order-1 = lg:order-1) -->
+                            <div class="relative h-[260px] sm:h-[320px] lg:h-[480px] order-1">
                                 <img src="src/img/vhm photo.jpeg" 
                                     alt="Vrukshathon Marathon" 
                                     class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent lg:bg-gradient-to-l lg:from-gray-900/80 lg:via-transparent lg:to-transparent"></div>
                             </div>
                             
-                            <!-- Content Side -->
-                            <div class="p-8 lg:p-12 flex flex-col justify-center space-y-6 order-1 lg:order-2">
+                            <!-- Content Side — bottom on mobile (order-2), right on desktop (order-2) -->
+                            <div class="p-8 lg:p-12 flex flex-col justify-center space-y-6 order-2">
                                 <div class="inline-flex items-center space-x-2 bg-orange-400/10 border border-orange-400/30 rounded-full px-4 py-2 w-fit">
                                     <i data-lucide="moon" class="w-4 h-4 text-orange-400"></i>
                                     <span class="text-sm font-semibold text-orange-400">Marathon Event</span>
@@ -230,7 +244,7 @@
                                         <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
                                             <i data-lucide="users" class="w-5 h-5 text-orange-400"></i>
                                         </div>
-                                        <span class="text-lg">3K , 5K , 10k & 21k Categories</span>
+                                        <span class="text-lg">3K, 5K, 10k &amp; 21k Categories</span>
                                     </div>
                                 </div>
                                 
@@ -251,13 +265,27 @@
                         <div class="h-px w-32 bg-gradient-to-r from-transparent via-orange-400/50 to-transparent"></div>
                     </div>
 
-                    <!-- Event 3 -->
+                    <!-- ==================== -->
+                    <!-- Event 3: Sinhagad   -->
+                    <!-- ==================== -->
                     <div class="group relative bg-gradient-to-br from-black to-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-orange-400 transition-all duration-500 shadow-2xl hover:shadow-orange-400/20">
                         <div class="absolute top-0 right-0 w-64 h-64 bg-orange-400/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
                         
-                        <div class="relative grid lg:grid-cols-2 gap-0">
-                            <!-- Content Side -->
-                            <div class="p-8 lg:p-12 flex flex-col justify-center space-y-6">
+                        <!--
+                            FIX: Same as Event 1 — image on top (mobile) / right (desktop).
+                        -->
+                        <div class="relative flex flex-col lg:grid lg:grid-cols-2">
+
+                            <!-- Image Side — order-1 on mobile (top), order-last on desktop (right) -->
+                            <div class="relative h-[260px] sm:h-[320px] lg:h-[480px] order-1 lg:order-last">
+                                <img src="src/img/sinhagad img.jpeg" 
+                                    alt="Sinhagad Marathon" 
+                                    class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-gray-900/80 lg:via-transparent lg:to-transparent"></div>
+                            </div>
+
+                            <!-- Content Side — order-2 on mobile (bottom), order-first on desktop (left) -->
+                            <div class="p-8 lg:p-12 flex flex-col justify-center space-y-6 order-2 lg:order-first">
                                 <div class="inline-flex items-center space-x-2 bg-orange-400/10 border border-orange-400/30 rounded-full px-4 py-2 w-fit">
                                     <i data-lucide="calendar" class="w-4 h-4 text-orange-400"></i>
                                     <span class="text-sm font-semibold text-orange-400">Marathon Event</span>
@@ -278,13 +306,13 @@
                                         <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
                                             <i data-lucide="map-pin" class="w-5 h-5 text-orange-400"></i>
                                         </div>
-                                        <span class="text-lg">Krushnai water park , pune</span>
+                                        <span class="text-lg">Krushnai Water Park, Pune</span>
                                     </div>
                                     <div class="flex items-center space-x-3 text-gray-300">
                                         <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center">
                                             <i data-lucide="users" class="w-5 h-5 text-orange-400"></i>
                                         </div>
-                                        <span class="text-lg"> 3k ,5K , 10K & 21k  Categories</span>
+                                        <span class="text-lg">5K, 10K &amp; 21k Categories</span>
                                     </div>
                                 </div>
                                 
@@ -296,14 +324,6 @@
                                     Learn More
                                     <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
                                 </a>
-                            </div>
-                            
-                            <!-- Image Side -->
-                            <div class="relative h-[400px] lg:h-auto">
-                                <img src="src/img/sinhagad img.jpeg" 
-                                    alt="Sinhagad Marathon" 
-                                    class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-gray-900/80 lg:via-transparent lg:to-transparent"></div>
                             </div>
                         </div>
                     </div>
@@ -324,7 +344,7 @@
         <!-- Divider -->
         <div class="h-px bg-orange-500 mx-4 sm:mx-6 lg:mx-8"></div>
 
-        <!-- Events To Date Section (UPGRADED FROM SOURCE) -->
+        <!-- Events To Date Section -->
         <section id="events" class="py-16 lg:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 fade-in">
@@ -339,7 +359,7 @@
                     <div class="timeline-item" data-year="2026">
                         <div class="timeline-content">
                             <h3 class="text-xl font-semibold mb-2">TuljaPur Marathon</h3>
-                            <p class="text-gray-400 mb-2">3,800 participants  • Tuljapur, Maharashtra</p>
+                            <p class="text-gray-400 mb-2">2,000+ participants  • Tuljapur, Maharashtra</p>
                             <div class="timeline-badges">
                                 <span class="badge">Latest Event</span>
                             </div>
@@ -349,7 +369,7 @@
                     <div class="timeline-item" data-year="2025">
                         <div class="timeline-content">
                             <h3 class="text-xl font-semibold mb-2">Sadri Marathon</h3>
-                            <p class="text-gray-400 mb-2">5,000 participants  • Sadri, Rajasthan</p>
+                            <p class="text-gray-400 mb-2">1,500+ participants  • Sadri, Rajasthan</p>
                             <div class="timeline-badges">
                                 <span class="badge">Sustainability Award</span>
                             </div>
@@ -359,7 +379,7 @@
                     <div class="timeline-item" data-year="2025">
                         <div class="timeline-content">
                             <h3 class="text-xl font-semibold mb-2">Vrukshathon Marathon</h3>
-                            <p class="text-gray-400 mb-2">10,000 participants  • Pune, Maharashtra</p>
+                            <p class="text-gray-400 mb-2">10,000+ participants  • Pune, Maharashtra</p>
                             <div class="timeline-badges">
                                 <span class="badge">Course Record</span>
                                 <span class="badge">Tree Planting Initiative</span>
@@ -370,7 +390,7 @@
                     <div class="timeline-item" data-year="2024">
                         <div class="timeline-content">
                             <h3 class="text-xl font-semibold mb-2">Orthopidic Walkathon</h3>
-                            <p class="text-gray-400 mb-2">2,500 participants  • Mumbai, Maharashtra</p>
+                            <p class="text-gray-400 mb-2">2,500+ participants  • Mumbai, Maharashtra</p>
                             <div class="timeline-badges">
                                 <span class="badge">Awareness Campaign</span>
                             </div>
@@ -380,7 +400,7 @@
                     <div class="timeline-item" data-year="2024">
                         <div class="timeline-content">
                             <h3 class="text-xl font-semibold mb-2">Pune City Marathon</h3>
-                            <p class="text-gray-400 mb-2">12,000 participants  • Pune, Maharashtra</p>
+                            <p class="text-gray-400 mb-2">12,000+ participants  • Pune, Maharashtra</p>
                             <div class="timeline-badges">
                                 <span class="badge">Largest Marathon</span>
                             </div>
@@ -395,113 +415,114 @@
 
         <!-- Race Results Section -->
         <section class="py-16 lg:py-20">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-12">
-                        <div class="flex items-center justify-center space-x-3 mb-6">
-                            <i data-lucide="trophy" class="text-orange-400 w-8 h-8"></i>
-                            <h2 class="text-3xl lg:text-4xl font-bold">Race Results</h2>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="flex items-center justify-center space-x-3 mb-6">
+                        <i data-lucide="trophy" class="text-orange-400 w-8 h-8"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold">Race Results</h2>
+                    </div>
+                    <p class="text-gray-200 text-lg mb-8 max-w-2xl mx-auto">
+                        Check out the latest results from our marathon events. See how our community performed 
+                        and find inspiration for your next race.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+                    <!-- TuljaPur Marathon 2026 -->
+                    <div class="race-card">
+                        <div class="race-card-bg" style="background-image: url('src/img/tuljapur3.jpeg');"></div>
+                        <div class="race-card-overlay"></div>
+                        <div class="race-card-badge">Latest</div>
+                        <div class="race-card-content">
+                            <h3 class="race-card-title">TuljaPur Marathon 2026</h3>
+                            <div class="race-card-date">
+                                <i data-lucide="calendar" class="race-stat-icon"></i>
+                                <span>March 15, 2026</span>
+                            </div>
+                            <div class="race-card-stats">
+                                <div class="race-stat">
+                                    <i data-lucide="users" class="race-stat-icon"></i>
+                                    <span>2,000 Runners</span>
+                                </div>
+                                <div class="race-stat">
+                                    <i data-lucide="map-pin" class="race-stat-icon"></i>
+                                    <span>Tuljapur</span>
+                                </div>
+                            </div>
+                            <a href="https://alpharacingsolution.com/event/result/786ed66a-5150-4b92-91e5-7c04fa10f78e" target="_blank" rel="noopener noreferrer" class="race-card-button">
+                                View Results
+                                <i data-lucide="external-link" class="race-card-button-icon"></i>
+                            </a>
                         </div>
-                        <p class="text-gray-200 text-lg mb-8 max-w-2xl mx-auto">
-                            Check out the latest results from our marathon events. See how our community performed 
-                            and find inspiration for your next race.
-                        </p>
                     </div>
 
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-
-                        <!-- TuljaPur Marathon 2026 -->
-                        <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('src/img/tuljapur3.jpeg');"></div>
-                            <div class="race-card-overlay"></div>
-                            <div class="race-card-badge">Latest</div>
-                            <div class="race-card-content">
-                                <h3 class="race-card-title">TuljaPur Marathon 2026</h3>
-                                <div class="race-card-date">
-                                    <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>March 15, 2026</span>
-                                </div>
-                                <div class="race-card-stats">
-                                    <div class="race-stat">
-                                        <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>2,000 Runners</span>
-                                    </div>
-                                    <div class="race-stat">
-                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>Tuljapur</span>
-                                    </div>
-                                </div>
-                                <a href="https://alpharacingsolution.com/event/result/786ed66a-5150-4b92-91e5-7c04fa10f78e" target="_blank" rel="noopener noreferrer" class="race-card-button">
-                                    View Results
-                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </a>
+                    <!-- Pune City Marathon 2026 -->
+                    <div class="race-card">
+                        <div class="race-card-bg" style="background-image: url('src/img/main4.jpeg');"></div>
+                        <div class="race-card-overlay"></div>
+                        <div class="race-card-badge">Latest</div>
+                        <div class="race-card-content">
+                            <h3 class="race-card-title">Pune City Marathon 2026</h3>
+                            <div class="race-card-date">
+                                <i data-lucide="calendar" class="race-stat-icon"></i>
+                                <span>March 1, 2026</span>
                             </div>
-                        </div>
-
-                        <!-- Pune City Marathon 2026 -->
-                        <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('src/img/main4.jpeg');"></div>
-                            <div class="race-card-overlay"></div>
-                            <div class="race-card-badge">Latest</div>
-                            <div class="race-card-content">
-                                <h3 class="race-card-title">Pune City Marathon 2026</h3>
-                                <div class="race-card-date">
-                                    <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>March 1, 2026</span>
+                            <div class="race-card-stats">
+                                <div class="race-stat">
+                                    <i data-lucide="users" class="race-stat-icon"></i>
+                                    <span>10,000 Runners</span>
                                 </div>
-                                <div class="race-card-stats">
-                                    <div class="race-stat">
-                                        <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>10,000 Runners</span>
-                                    </div>
-                                    <div class="race-stat">
-                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>Pune</span>
-                                    </div>
+                                <div class="race-stat">
+                                    <i data-lucide="map-pin" class="race-stat-icon"></i>
+                                    <span>Pune</span>
                                 </div>
-                                <a href="https://sportstimingsolutions.in/results?q=eyJlX25hbWUiOiJQdW5lIENpdHkgTWFyYXRob24gLSAzcmQgRWRpdGlvbiIsImVfaWQiOjkwOTUxfQ%3D%3D" target="_blank" rel="noopener noreferrer" class="race-card-button">
-                                    View Results
-                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </a>
                             </div>
-                        </div>
-
-                        
-                        <!-- Vrukshathon Marathon 2025 -->
-                        <div class="race-card">
-                            <div class="race-card-bg" style="background-image: url('src/img/vhm.avif');"></div>
-                            <div class="race-card-overlay"></div>
-                            <div class="race-card-badge">2025</div>
-                            <div class="race-card-content">
-                                <h3 class="race-card-title">Vrukshathon Marathon 2025</h3>
-                                <div class="race-card-date">
-                                    <i data-lucide="calendar" class="race-stat-icon"></i>
-                                    <span>June 7, 2025</span>
-                                </div>
-                                <div class="race-card-stats">
-                                    <div class="race-stat">
-                                        <i data-lucide="users" class="race-stat-icon"></i>
-                                        <span>10,000 Runners</span>
-                                    </div>
-                                    <div class="race-stat">
-                                        <i data-lucide="map-pin" class="race-stat-icon"></i>
-                                        <span>Pune</span>
-                                    </div>
-                                </div>
-                                <a href="https://alpharacingsolution.com/event/bib/68787d12-f9b2-4ae6-9509-d2f998f3d9d2" target="_blank" rel="noopener noreferrer" class="race-card-button">
-                                    View Results
-                                    <i data-lucide="external-link" class="race-card-button-icon"></i>
-                                </a>
-                            </div>
+                            <a href="https://sportstimingsolutions.in/results?q=eyJlX25hbWUiOiJQdW5lIENpdHkgTWFyYXRob24gLSAzcmQgRWRpdGlvbiIsImVfaWQiOjkwOTUxfQ%3D%3D" target="_blank" rel="noopener noreferrer" class="race-card-button">
+                                View Results
+                                <i data-lucide="external-link" class="race-card-button-icon"></i>
+                            </a>
                         </div>
                     </div>
-                  <!-- ✅ NEW: Navigate to full results page -->
+
+                    <!-- Vrukshathon Marathon 2025 -->
+                    <div class="race-card">
+                        <div class="race-card-bg" style="background-image: url('src/img/vhm.avif');"></div>
+                        <div class="race-card-overlay"></div>
+                        <div class="race-card-badge">2025</div>
+                        <div class="race-card-content">
+                            <h3 class="race-card-title">Vrukshathon Marathon 2025</h3>
+                            <div class="race-card-date">
+                                <i data-lucide="calendar" class="race-stat-icon"></i>
+                                <span>June 7, 2025</span>
+                            </div>
+                            <div class="race-card-stats">
+                                <div class="race-stat">
+                                    <i data-lucide="users" class="race-stat-icon"></i>
+                                    <span>10,000 Runners</span>
+                                </div>
+                                <div class="race-stat">
+                                    <i data-lucide="map-pin" class="race-stat-icon"></i>
+                                    <span>Pune</span>
+                                </div>
+                            </div>
+                            <a href="https://alpharacingsolution.com/event/bib/68787d12-f9b2-4ae6-9509-d2f998f3d9d2" target="_blank" rel="noopener noreferrer" class="race-card-button">
+                                View Results
+                                <i data-lucide="external-link" class="race-card-button-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigate to full results page -->
                 <div class="flex justify-center mt-10">
                     <a href="/race-results" class="btn-secondary group inline-flex items-center gap-2">
                         Explore All Race Results
                         <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
                 </div>
-            </section>
+            </div>
+        </section>
 
         <!-- Divider -->
         <div class="h-px bg-orange-500 mx-4 sm:mx-6 lg:mx-8"></div>
@@ -577,124 +598,119 @@
     </main>
 
     <!-- Footer -->
-        <footer class="bg-black text-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <!-- Brand Section -->
-                    <div class="space-y-4">
-                        <div>
-                            <a href="index.html" class="inline-block">
-                                <img 
-                                    src="src/img/Logo.png" 
-                                    alt="Deccan Eventsphere - Where Every Event Peaks"
-                                    class="h-16 sm:h-20 w-auto object-contain bg-transparent"
-                                >
-                            </a>
-
-                            <p class="text-orange-400 font-medium mt-3">
-                                Power Your Run. Where Endurance Meets Energy.
-                            </p>
-                        </div>
-
-                        <p class="text-gray-300 leading-relaxed">
-                            Organizing world-class marathon events that challenge participants 
-                            while supporting meaningful causes. Join our community of passionate runners.
+    <footer class="bg-black text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Brand Section -->
+                <div class="space-y-4">
+                    <div>
+                        <a href="index.html" class="inline-block">
+                            <img 
+                                src="src/img/Logo.png" 
+                                alt="Deccan Eventsphere - Where Every Event Peaks"
+                                class="h-16 sm:h-20 w-auto object-contain bg-transparent"
+                            >
+                        </a>
+                        <p class="text-orange-400 font-medium mt-3">
+                            Power Your Run. Where Endurance Meets Energy.
                         </p>
                     </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Organizing world-class marathon events that challenge participants 
+                        while supporting meaningful causes. Join our community of passionate runners.
+                    </p>
+                </div>
 
-                    <!-- Quick Links -->
-                    <div class="space-y-4">
-                        <h4 class="text-lg font-semibold text-orange-400">Quick Links</h4>
-                        <div class="grid grid-cols-2 gap-2">
-                            <a href="index.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Home</a>
-                            <a href="about.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">About</a>
-                            <a href="events.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Events</a>
-                            <a href="trek-with-us.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Trekking</a>
-                            <a href="gallery.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Gallery</a>
-                            <a href="race-results.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Race Results</a>
-                        </div>
-                    </div>
-
-                    <!-- Contact Info -->
-                    <div class="space-y-4">
-                        <h4 class="text-lg font-semibold text-orange-400">Get in Touch</h4>
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-3">
-                                <i data-lucide="mail" class="text-orange-400 w-5 h-5"></i>
-                                <a href="mailto:info@deccaneventsphere.com" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">
-                                    info@deccaneventsphere.com
-                                </a>
-                            </div>
-
-                            <div class="flex items-center space-x-3">
-                                <i data-lucide="phone" class="text-orange-400 w-5 h-5"></i>
-                                <a href="tel:+919356328972" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">
-                                    +91 93563 28972
-                                </a>
-                            </div>
-
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="map-pin" class="text-orange-400 w-5 h-5 mt-0.5"></i>
-                                <span class="text-gray-300">Shop no : C14 , Shri Alok Nagari CTS NO: 1305,Kasba Peth, Pune - 411011</span>
-                            </div>
-                        </div>
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-orange-400">Quick Links</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="index.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Home</a>
+                        <a href="about.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">About</a>
+                        <a href="events.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Events</a>
+                        <a href="trek-with-us.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Trekking</a>
+                        <a href="gallery.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Gallery</a>
+                        <a href="race-results.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Race Results</a>
                     </div>
                 </div>
 
-                <!-- Social Media and Copyright -->
-                <div class="mt-12 pt-8 border-t border-gray-800">
-                    <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
-                        
-                        <!-- Social Links -->
-                        <div class="flex items-center gap-4">
-                            
-                            <!-- WhatsApp -->
-                            <a href="https://wa.me/919370380810" target="_blank"
-                            class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-green-500 hover:border-green-500 transition-all duration-300 transform hover:scale-110"
-                            aria-label="WhatsApp">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.33 4.96L2 22l5.25-1.38a9.91 9.91 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.16a8.24 8.24 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24s8.25 3.7 8.25 8.24-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-.12-.74-.65-1.23-1.46-1.38-1.7-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.28z"/>
-                                </svg>
-                            </a>
-
-                            <!-- Instagram -->
-                            <a href="https://www.instagram.com/deccaneventsphere?igsh=eWViYXZtNXIzeHho" target="_blank"
-                            class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-pink-500 transition-all duration-300 transform hover:scale-110"
-                            aria-label="Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-                                </svg>
-                            </a>
-
-                            <!-- Facebook -->
-                            <a href="https://www.facebook.com/share/1DivVeFBGU/" target="_blank"
-                            class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 transform hover:scale-110"
-                            aria-label="Facebook">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                                    <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.027 4.388 11.021 10.125 11.927v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-                                </svg>
+                <!-- Contact Info -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-orange-400">Get in Touch</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="text-orange-400 w-5 h-5"></i>
+                            <a href="mailto:info@deccaneventsphere.com" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">
+                                info@deccaneventsphere.com
                             </a>
                         </div>
-
-                        <!-- Copyright -->
-                        <p class="text-gray-400 text-sm text-center">
-                            © 2026 Deccaneventsphere. All rights reserved.
-                        </p>
-
-                        <!-- Credit -->
-                        <p class="text-gray-500 text-xs text-center lg:text-right">
-                            Crafted with ❤️ by 
-                            <a href="https://contact.abhiwebstudio.in" target="_blank"
-                            class="text-orange-400 hover:underline hover:text-orange-300">
-                                Abhiwebstudio
-                            </a> · Custom websites for businesses & events
-                        </p>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="text-orange-400 w-5 h-5"></i>
+                            <a href="tel:+919356328972" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">
+                                +91 93563 28972
+                            </a>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="text-orange-400 w-5 h-5 mt-0.5"></i>
+                            <span class="text-gray-300">Shop no : C14, Shri Alok Nagari CTS NO: 1305, Kasba Peth, Pune - 411011</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
 
+            <!-- Social Media and Copyright -->
+            <div class="mt-12 pt-8 border-t border-gray-800">
+                <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
+                    
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-4">
+                        
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/919370380810" target="_blank"
+                        class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-green-500 hover:border-green-500 transition-all duration-300 transform hover:scale-110"
+                        aria-label="WhatsApp">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.33 4.96L2 22l5.25-1.38a9.91 9.91 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.16a8.24 8.24 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24s8.25 3.7 8.25 8.24-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-.12-.74-.65-1.23-1.46-1.38-1.7-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.28z"/>
+                            </svg>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/deccaneventsphere?igsh=eWViYXZtNXIzeHho" target="_blank"
+                        class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-pink-500 transition-all duration-300 transform hover:scale-110"
+                        aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                            </svg>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/share/1DivVeFBGU/" target="_blank"
+                        class="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 transform hover:scale-110"
+                        aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.027 4.388 11.021 10.125 11.927v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Copyright -->
+                    <p class="text-gray-400 text-sm text-center">
+                        © 2026 Deccaneventsphere. All rights reserved.
+                    </p>
+
+                    <!-- Credit -->
+                    <p class="text-gray-500 text-xs text-center lg:text-right">
+                        Crafted with ❤️ by 
+                        <a href="https://contact.abhiwebstudio.in" target="_blank"
+                        class="text-orange-400 hover:underline hover:text-orange-300">
+                            Abhiwebstudio
+                        </a> · Custom websites for businesses &amp; events
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- JavaScript -->
     <script src="src/main.js"></script>
